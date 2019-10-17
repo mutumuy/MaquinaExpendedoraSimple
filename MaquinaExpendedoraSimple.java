@@ -50,7 +50,12 @@ public class MaquinaExpendedoraSimple {
      */
     public void introducirDinero(int cantidadIntroducida) {
         balanceClienteActual = balanceClienteActual + cantidadIntroducida;
+        totalDineroAcumulado = totalDineroAcumulado + cantidadIntroducida;
     }    
+    
+    public int getDineroTotal(){
+        return totalDineroAcumulado;
+    }
 
     /**
      * Imprime un billete para el cliente actual
@@ -63,9 +68,7 @@ public class MaquinaExpendedoraSimple {
         System.out.println("# " + precioBillete + " euros.");
         System.out.println("##################");
         System.out.println();
-
-        // Actualiza el total de dinero acumulado en la maquina
-        totalDineroAcumulado = totalDineroAcumulado + balanceClienteActual;
+        
         // Queda preparada para el proximo cliente
         balanceClienteActual = 0;
     }
